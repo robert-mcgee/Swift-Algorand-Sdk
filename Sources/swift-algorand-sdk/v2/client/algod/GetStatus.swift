@@ -16,7 +16,7 @@ public class GetStatus: Request {
     
     init(client: AlgodClient) {
         self.client = client
-        parameters = .init(path: "/v2/status/")
+        parameters = .init(path: "/v2/status")
     }
 }
 
