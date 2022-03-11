@@ -21,7 +21,7 @@ public class RawTransaction: Request {
     
     init(client: AlgodClient, rawtxn: [Int8]) {
         self.client = client
-        parameters = .init(path: "/v2/transactions/",
+        parameters = .init(path: "/v2/transactions",
                            headers: ["Content-type": "application/x-binary"],
                             method: .post,
                             encoding: ByteEncoding(data: Data(CustomEncoder.convertToUInt8Array(input: rawtxn))))
@@ -29,7 +29,7 @@ public class RawTransaction: Request {
     
     @available(*, deprecated, message: "Use `init(client: AlgodClient, rawtxn: [Int8])` instead")
     public func rawtxn(rawtaxn: [Int8]) -> RawTransaction {
-        self.parameters = .init(path: "/v2/transactions/", headers: ["Content-type": "application/x-binary"],
+        self.parameters = .init(path: "/v2/transactions", headers: ["Content-type": "application/x-binary"],
                                 method: .post,
                                 encoding: ByteEncoding(data: Data(CustomEncoder.convertToUInt8Array(input: rawtaxn))))
         return self
