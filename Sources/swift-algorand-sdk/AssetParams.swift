@@ -38,7 +38,7 @@ public class AssetParams: Codable,Equatable {
 
        
                if let mDataHash = metadataHash {
-                   if (mDataHash.count > 32) {
+                   if (mDataHash.count > 44) {
                     throw Errors.runtimeError("asset metadataHash cannot be greater than 32 bytes")
                  
                    }
